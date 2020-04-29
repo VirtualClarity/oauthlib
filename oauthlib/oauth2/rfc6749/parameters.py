@@ -336,7 +336,7 @@ def parse_implicit_response(uri, state=None, scope=None):
         raise ValueError("Mismatching or missing state in params.")
 
     params = OAuth2Token(params, old_scope=scope)
-    validate_token_parameters(params)
+    # validate_token_parameters(params)
     return params
 
 
@@ -423,7 +423,7 @@ def parse_token_response(body, scope=None):
             params['expires_at'] = time.time() + int(params['expires_in'])
 
     params = OAuth2Token(params, old_scope=scope)
-    validate_token_parameters(params)
+    # validate_token_parameters(params)
     return params
 
 
